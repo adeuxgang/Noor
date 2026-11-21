@@ -1,0 +1,9 @@
+{
+  "name": "NOOR — Compagnon spirituel",
+  "short_name": "NOOR",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f4f5ef",
+  "theme_color": "#143c32",
+  "icons": []
+}
