@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#102c27"><meta name="description" content="NOOR — horaires de prière, Coran, Qibla et tasbih.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css">
+<title>NOOR — Ton compagnon spirituel</title>
+</head>
+<body>
+<header class="top"><div class="brand"><span class="mark">☾</span><div><b>NOOR</b><small>TON COMPAGNON SPIRITUEL</small></div></div><button id="locate" class="iconbtn" aria-label="Choisir ma position">⌖</button></header>
+<main>
+<section class="hero">
+ <div class="eyebrow">ASSALAM ALEYKOUM</div><h1>La paix commence<br>avec un instant.</h1>
+ <p id="today">Chargement de la date…</p>
+ <div class="next"><span>PROCHAINE PRIÈRE</span><strong id="nextName">—</strong><b id="countdown">Recherche des horaires…</b></div>
+ <div class="place" id="place">Position non définie</div>
+</section>
+<section class="section"><div class="sectionhead"><h2>Les cinq prières</h2><span id="method">Calcul automatique</span></div><div id="prayers" class="prayers"><div class="loading">Autorise la localisation pour afficher les horaires.</div></div></section>
+<section class="section grid">
+ <button class="tile" data-view="quran"><span>۞</span><b>Le Coran</b><small>Lire et méditer</small></button>
+ <button class="tile" data-view="qibla"><span>🧭</span><b>Qibla</b><small>Direction de La Mecque</small></button>
+ <button class="tile" data-view="tasbih"><span>📿</span><b>Tasbih</b><small>Ton dhikr quotidien</small></button>
+ <button class="tile" data-view="calendar"><span>☾</span><b>Calendrier</b><small>Date hégirienne</small></button>
+</section>
+<section class="section focus">
+ <div><div class="eyebrow">UN MOMENT POUR ALLAH</div><h2>Mode prière</h2><p>Prépare un temps de calme avant ou pendant la salat.</p></div>
+ <label class="switch"><input id="focusToggle" type="checkbox"><span></span></label>
+ <p id="focusStatus" class="hint">Le mode concentration est désactivé.</p>
+ <small class="hint">Important : sur un site ou une PWA, NOOR ne peut pas bloquer les autres applications. Le vrai blocage nécessite une application native et des autorisations spéciales Android ou iOS.</small>
+</section>
+
+<section class="section profile" id="profile">
+ <div class="sectionhead"><h2>Mon profil</h2><span>Privé sur cet appareil</span></div>
+ <p class="hint">Réponds à quelques questions pour créer un programme adapté à ton rythme. Tu peux laisser les champs facultatifs vides.</p>
+ <div class="profileform">
+  <label>Ton prénom<input id="profileName" placeholder="Ex. Adam" maxlength="30"></label>
+  <label>Ton âge<select id="profileAge"><option value="">Choisir (facultatif)</option><option>Moins de 13 ans</option><option>13–15 ans</option><option>16–17 ans</option><option>18–24 ans</option><option>25–34 ans</option><option>35 ans ou plus</option></select></label>
+  <label>Comment évalues-tu ta régularité dans les prières ?
+   <select id="prayerLevel"><option value="">Choisir</option><option>Je débute</option><option>J'en prie quelques-unes</option><option>J'essaie les cinq chaque jour</option><option>Je suis régulier(e), je veux progresser</option></select>
+  </label>
+  <label>Quelle prière est la plus difficile à tenir ?
+   <select id="hardPrayer"><option value="">Aucune / je ne sais pas</option><option>Fajr</option><option>Dhuhr</option><option>Asr</option><option>Maghrib</option><option>Isha</option></select>
+  </label>
+  <label>Ton objectif principal
+   <select id="goal"><option>Être plus régulier dans les 5 prières</option><option>Apprendre à lire le Coran</option><option>Apprendre des sourates et des invocations</option><option>Améliorer mon comportement</option><option>Un peu de tout</option></select>
+  </label>
+  <button class="action" id="saveProfile">Créer mon programme</button>
+  <p class="hint" id="profileStatus">Tes réponses restent enregistrées localement dans ce navigateur.</p>
+ </div>
+</section>
+<section class="section">
+ <div class="sectionhead"><h2>Mon programme quotidien</h2><span>À ton rythme</span></div>
+ <div id="dailyPlan" class="plan">
+  <p class="hint">Complète ton profil pour obtenir un emploi du temps simple et progressif.</p>
+ </div>
+</section>
+<section class="section focus">
+ <div class="eyebrow">DISCIPLINE NUMÉRIQUE</div><h2>Applications à mettre en pause</h2>
+ <p>Choisis les distractions que tu souhaites éviter pendant un temps de prière.</p>
+ <div class="appchoices">
+  <label><input type="checkbox" class="appChoice" value="Réseaux sociaux"> Réseaux sociaux</label>
+  <label><input type="checkbox" class="appChoice" value="Jeux"> Jeux</label>
+  <label><input type="checkbox" class="appChoice" value="Vidéos"> Applications vidéo</label>
+  <label><input type="checkbox" class="appChoice" value="Autres distractions"> Autres distractions</label>
+ </div>
+ <button class="action" id="setupBlock">Configurer le blocage</button>
+ <p class="hint" id="blockStatus">Cette version peut enregistrer tes choix, mais ne peut pas verrouiller les autres applications. L'autorisation système et le vrai blocage seront ajoutés dans les versions natives.</p>
+</section>
+
+<section class="section"><div class="sectionhead"><h2>Mosquées</h2><span>Autour de toi</span></div><p class="hint">La recherche de mosquées sera ajoutée avec une source de données dédiée. Vérifie toujours les horaires d'iqama auprès de ta mosquée.</p></section>
+</main>
+<nav class="bottom"><button class="active" data-view="home">⌂<small>Accueil</small></button><button data-view="quran">۞<small>Coran</small></button><button data-view="qibla">⌖<small>Qibla</small></button><button data-view="tasbih">📿<small>Tasbih</small></button></nav>
+<div id="modal" class="modal hidden"><div class="sheet"><button id="close" class="close">✕</button><div id="modalContent"></div></div></div>
+<script src="app.js"></script>
+</body></html>
